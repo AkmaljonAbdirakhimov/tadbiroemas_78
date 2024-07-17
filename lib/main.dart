@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tadbiroemas_78/data/repositories/auth_repository.dart';
 import 'package:tadbiroemas_78/data/repositories/todo_repository.dart';
 import 'package:tadbiroemas_78/logic/blocs/auth/auth_bloc.dart';
+import 'package:tadbiroemas_78/logic/blocs/my_bloc_observer.dart';
 import 'package:tadbiroemas_78/logic/blocs/todo/todo_bloc.dart';
 import 'package:tadbiroemas_78/services/firebase_auth_service.dart';
 import 'package:tadbiroemas_78/services/firebase_todo_service.dart';
@@ -17,6 +18,8 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
+  Bloc.observer = MyBlocObserver();
 
   final firebaseAuthService = FirebaseAuthService();
   final firebaseTodoService = FirebaseTodoService();

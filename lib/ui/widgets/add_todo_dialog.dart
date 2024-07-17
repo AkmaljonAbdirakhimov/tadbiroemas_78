@@ -16,10 +16,10 @@ class _AddTodoDialogState extends State<AddTodoDialog> {
   @override
   Widget build(BuildContext context) {
     return BlocListener<TodoBloc, TodoState>(
-      listener: (context, state) {
-        if (state is LoadedTodoState) {
-          Navigator.pop(context);
-        }
+      listener: (context, state) async {
+        // if (state is LoadedTodoState) {
+        //   Navigator.pop(context);
+        // }
       },
       child: AlertDialog(
         title: const Text("Reja"),
